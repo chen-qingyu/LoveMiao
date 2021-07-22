@@ -17,7 +17,6 @@ int main(void)
     puts("\n喵，就让这个程序来表达我的心意吧\n\n"
          "小程序按任意键退出\n\n"
          "喵可以在这里添加小程序~\n\n"
-         "源代码在Source文件夹中\n音乐在Music文件夹中\n"
          "爱你~\n\n"
          "\t\t\t\t——你家的青喵\n\n"
          "1: Star\n2: Rainbow\n"
