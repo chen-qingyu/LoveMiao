@@ -1,7 +1,6 @@
 #include "Miao.h"
 
 char *getstr(void);
-
 int main(void)
 {
     char *str = NULL;
