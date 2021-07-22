@@ -1,68 +1,49 @@
 #include "Miao.h"
 
-enum spectrum
+void Color(string input)
 {
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    purple,
-    black,
-    white,
-    love
-} color;
-
-const char *colors[] = {
-    "red", "orange", "yellow", "green",
-    "cyan", "blue", "purple", "black",
-    "white", "love"};
-
-void Color(char *input)
-{
-    for (color = red; color <= love; color = (enum spectrum)(color + 1))
+    if (input == "red")
     {
-        if (strcmp(input, colors[color]) == 0)
-        {
-            break;
-        }
+        cout << "Red like roses fills my dreams and brings me to the place you rest." << endl;
     }
-
-    switch (color)
+    else if (input == "orange")
     {
-        case red:
-            printf("Red like roses fills my dreams and brings me to the place you rest.");
-            break;
-        case orange:
-            printf("Orange is warm, like summer citrus.");
-            break;
-        case yellow:
-            printf("Yellow beauty burns gold.");
-            break;
-        case green:
-            printf("Green is full of vitality, bringing spring.");
-            break;
-        case cyan:
-            printf("Cyan is me.");
-            break;
-        case blue:
-            printf("Blue is the sky, vast expanse.");
-            break;
-        case purple:
-            printf("Purple is passionate and noble.");
-            break;
-        case black:
-            printf("Black the beast descends from shadows.");
-            break;
-        case white:
-            printf("White is you.");
-            break;
-        case love:
-            printf("I want you, and I love you.");
-            break;
-        default:
-            printf("没有选项 %s ， 不如您来添加？", input);
+        cout << "Orange is warm, like summer citrus." << endl;
     }
-    putchar('\n');
+    else if (input == "yellow")
+    {
+        cout << "Yellow beauty burns gold." << endl;
+    }
+    else if (input == "green")
+    {
+        cout << "Green is full of vitality, bringing spring." << endl;
+    }
+    else if (input == "cyan")
+    {
+        cout << "Cyan is me." << endl;
+    }
+    else if (input == "blue")
+    {
+        cout << "Blue is the sky, vast expanse." << endl;
+    }
+    else if (input == "purple")
+    {
+        cout << "Purple is passionate and noble." << endl;
+    }
+    else if (input == "black")
+    {
+        cout << "Black the beast descends from shadows." << endl;
+    }
+    else if (input == "white")
+    {
+        cout << "White is you." << endl;
+    }
+    else if (input == "love")
+    {
+        cout << "I want you, and I love you." << endl;
+    }
+    else
+    {
+        cout << "没有选项 " << input << " ， 不如您来添加？" << endl;
+    }
 }

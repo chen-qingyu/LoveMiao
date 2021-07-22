@@ -1,8 +1,12 @@
 #include "Miao.h"
 
-void Word(void)
+void Word(bool play_music)
 {
-    PlaySound(TEXT("Music/Too Far.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+    if (play_music)
+    {
+        PlaySound(TEXT("Music/Too Far.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+    }
+    
     srand(time(NULL));
     initgraph(WINDOW_LENGTH, WINDOW_HEIGHT);
 

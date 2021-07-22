@@ -1,18 +1,21 @@
 #include "Miao.h"
 
-char *getstr(void);
-
 int main(void)
 {
-    char *str = NULL;
-    char c;
-    printf("Play music?(y/n):");
-    scanf("%c", &c);
-    if (c == 'y' || c == 'Y')
+    string input; // input string
+    bool play_music = false;
+    cout << "Play music?(y/n): ";
+    cin >> input;
+    if (input == "y" || input == "Y")
+    {
+        play_music = true;
+    }
+
+    if (play_music)
     {
         PlaySound(_T("Music/溢爱.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
     }
-    getchar(); // 吃掉多余的Enter
+    cin.get(); // 吃掉多余的换行符
 
     puts("\n喵，就让这个程序来表达我的心意吧\n\n"
          "小程序按任意键退出\n\n"
@@ -25,91 +28,62 @@ int main(void)
 
     while (1)
     {
-        free(str);
-        printf("\nEnter: ");
-        str = getstr();
-        for (int i = 0; str[i] != '\0'; i++)
+        cout << "\nEnter: ";
+        std::getline(cin, input);
+
+        for (int i = 0; input[i] != '\0'; i++)
         {
-            if (str[i] >= 'A' && str[i] <= 'Z')
+            if (input[i] >= 'A' && input[i] <= 'Z')
             {
-                str[i] += ('a'-'A'); // to lower
+                input[i] += ('a'-'A'); // to lower
             }
         }
-        if (strcmp(str, "q") == 0)
+
+        // quit
+        if (input == "q")
         {
             break;
         }
-        if (str[0] == '\0' || str[0] == '\t' || str[0] == ' ')
+        // ignore space
+        if (input[0] == '\0' || input[0] == '\t' || input[0] == ' ')
         {
             continue;
         }
 
-        if (strcmp(str, "1") == 0)
+        /*
+            functions.
+        */
+        if (input == "1")
         {
-            Star();
+            Star(play_music);
         }
-        else if (strcmp(str, "2") == 0)
+        else if (input == "2")
         {
-            Rainbow();
+            Rainbow(play_music);
         }
-        else if (strcmp(str, "3") == 0)
+        else if (input == "3")
         {
-            Word();
+            Word(play_music);
         }
-        else if (strcmp(str, "4") == 0)
+        else if (input == "4")
         {
             Circle();
             continue;
         }
         else
         {
-            Color(str);
+            Color(input);
             continue;
         }
-        PlaySound(_T("Music/溢爱.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+
+        if (play_music)
+        {
+            PlaySound(_T("Music/溢爱.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+        }
     }
 
-    puts("喵喵喵~~\n");
-    Sleep(1000);
+    cout << "喵喵喵~~" << endl;
+    Sleep(1000); // wait 1000ms
 
     return 0;
-}
-
-char *getstr(void)
-{
-    char *tmp, *str = (char *)malloc(10);
-    int c = 0, times = 1, number = 0, len = 0;
-    if (!str)
-    {
-        fprintf(stderr, "ERROR: There was not enough memory.\n");
-        exit(-2);
-    }
-
-    number += times * 10;
-    while ((c = getchar()) != '\n')
-    {
-        if (len == number)
-        {
-            times++;
-            number = times * 10;
-            tmp = str;
-            str = (char *)realloc(str, number);
-            if (str == NULL)
-            {
-                fprintf(stderr, "ERROR: There was not enough memory.\n");
-                exit(-2);
-            }
-        }
-        *(str + len) = c;
-        len++;
-    }
-    str = (char *)realloc(str, len + 1);
-    if (str == NULL)
-    {
-        fprintf(stderr, "ERROR: There was not enough memory.\n");
-        exit(-2);
-    }
-    *(str + len) = '\0';
-
-    return str;
 }

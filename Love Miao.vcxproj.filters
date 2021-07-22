@@ -46,4 +46,18 @@
   <ItemGroup>
     <Text Include="VersionLog.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Music\One Day.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="Music\One night.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="Music\Too Far.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="Music\溢爱.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

@@ -4,9 +4,13 @@ void sky(void);
 void rainbow(void);
 void msg(void);
 
-void Rainbow(void)
+void Rainbow(bool play_music)
 {
-    PlaySound(_T("Music/One Day.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+    if (play_music)
+    {
+        PlaySound(_T("Music/One Day.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+    }
+    
     initgraph(WINDOW_LENGTH, WINDOW_HEIGHT);
 
     sky();

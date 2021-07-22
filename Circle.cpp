@@ -34,6 +34,5 @@ void Circle(void)
             putchar(" *"[sy > 0 != sin(sx) < sy]);
         }
     }
-    printf("\n");
-    printf("\n这是一幅山水画\n");
+    printf("\n\n这是一幅山水画\n");
 }

@@ -156,6 +156,12 @@
   <ItemGroup>
     <Text Include="VersionLog.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Music\One Day.wav" />
+    <Media Include="Music\One night.wav" />
+    <Media Include="Music\Too Far.wav" />
+    <Media Include="Music\溢爱.wav" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
