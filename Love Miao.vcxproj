@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="EasyX_Help.url" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Miao.h" />
