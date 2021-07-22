@@ -45,5 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="VersionLog.txt" />
+    <Text Include="新建文本文档.txt" />
   </ItemGroup>
 </Project>
