@@ -10,7 +10,7 @@ void Rainbow(bool play_music)
     {
         PlaySound(_T("Music/One Day.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
     }
-    
+
     initgraph(WINDOW_LENGTH, WINDOW_HEIGHT);
 
     sky();

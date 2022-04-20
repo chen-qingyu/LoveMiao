@@ -18,13 +18,13 @@ int main(void)
     cin.get(); // 吃掉多余的换行符
 
     puts("\n喵，就让这个程序来表达我的心意吧\n\n"
-         "小程序按任意键退出\n\n"
-         "喵可以在这里添加小程序~\n\n"
-         "爱你~\n\n"
-         "\t\t\t\t——你家的青喵\n\n"
-         "1: Star\n2: Rainbow\n"
-         "3: Word\n4: Circle\n\n"
-         "q: 退出");
+        "小程序按任意键退出\n\n"
+        "喵可以在这里添加小程序~\n\n"
+        "爱你~\n\n"
+        "\t\t\t\t——你家的青喵\n\n"
+        "1: Star\n2: Rainbow\n"
+        "3: Word\n4: Circle\n\n"
+        "q: 退出");
 
     while (1)
     {
@@ -35,7 +35,7 @@ int main(void)
         {
             if (input[i] >= 'A' && input[i] <= 'Z')
             {
-                input[i] += ('a'-'A'); // to lower
+                input[i] += ('a' - 'A'); // to lower
             }
         }
 

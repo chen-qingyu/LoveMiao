@@ -20,7 +20,7 @@ void Star(bool play_music)
     {
         PlaySound(_T("Music/One night.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
     }
-    
+
     srand(time(NULL));
     initgraph(WINDOW_LENGTH, WINDOW_HEIGHT);
     for (int i = 0; i < MAX; i++)
